@@ -1,27 +1,17 @@
 public class Car {
-    private String make = "Tesla";
-    private String model = "Model X";
+    private String make = "Toyota";
+    private String model = "Fielder";
     private String color = "Gray";
-    private int doors =  4;
+    private int doors = 5;
     private boolean convertible = true;
 
-    public String getModel() {
-        return model;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public int getDoors() {
-        return doors;
-    }
-
-    public boolean isConvertible() {
-        return convertible;
-    }
-    public String getMake(){
-        return make;
+    public void setMake(String make) {
+        if(make == null) make = "Unknown";
+        String lowercaseMake = make.toLowerCase();
+        switch(lowercaseMake){
+            case "holden","porsche","mitsubishi" -> this.make = make;
+            default -> this.make = "Unsupported";
+        }
     }
 
     public void setModel(String model) {
@@ -39,19 +29,28 @@ public class Car {
     public void setConvertible(boolean convertible) {
         this.convertible = convertible;
     }
-
-    public void setMake(String make) {
-        if (make == null) make ="Unknown";
-        String lowercaseMake = make.toLowerCase();
-        switch (lowercaseMake) {
-            case "holden","porsche","tesla" -> this.make = make;
-            default ->{
-                this.make = "unsupported";
-            }
-        }
+    public String getMake(){
+        return make;
     }
 
-    public void describeCar() {
-        System.out.println(doors + "-door " + color + "  "+ make+ "  " + model+ " " + (convertible? "convertible" : ""));
+    public String getModel() {
+        return model;
+    }
+
+    public String color() {
+        return color;
+    }
+
+    public int getDoors() {
+        return doors;
+    }
+
+    public boolean isConvertible() {
+        return convertible;
+    }
+
+    public void describeCar(){
+        System.out.println(doors + "- Door " + color +" " + make +" " + model + " " +
+                (convertible?"Convertible":""));
     }
 }

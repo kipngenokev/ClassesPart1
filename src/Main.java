@@ -1,12 +1,19 @@
 public class Main {
-    public static void main(String[] args) {
-
-        System.out.println("Hello world!");
-
+    public static void main(String[] args){
         Car car = new Car();
         car.describeCar();
-        System.out.println("make ="+car.getMake());
-        System.out.println("model ="+car.getModel());
-        car.setMake("Isuzu");
+        car.setMake("Porsche");
+        car.setModel("Cayenne");
+        System.out.println(car.getMake());
+        System.out.println(car.getModel());
+        System.out.println(car.isConvertible());
+
+        Car mitsubishi = new Car();
+        mitsubishi.setMake("Mitsubishi");
+        mitsubishi.setModel("RVR");
+        mitsubishi.setColor("Red");
+        mitsubishi.setDoors(4);
+        mitsubishi.setConvertible(false);
+        mitsubishi.describeCar();
     }
 }
